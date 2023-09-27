@@ -36,8 +36,8 @@ export default function Header() {
 	}
 	useEffect(() => {
 		setCount(count => count = refCount.current)
-		setWindowWidth(window.innerWidth)
-		window.addEventListener('resize', () => {
+		setWindowWidth(window?.innerWidth)
+		window?.addEventListener('resize', () => {
 			setWindowWidth(window.innerWidth)
 		})
 		setInterval(() => {
