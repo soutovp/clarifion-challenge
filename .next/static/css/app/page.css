@@ -559,11 +559,11 @@
     font-size: 1.2rem;
   }
 }
-.steps_ul__hDbD5 li div {
+.steps_ul__hDbD5 li p {
   display: inline;
 }
 @media (max-width: 768px) {
-  .steps_ul__hDbD5 li div {
+  .steps_ul__hDbD5 li p {
     display: none;
   }
 }

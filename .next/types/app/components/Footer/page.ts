@@ -1,4 +1,4 @@
-// File: C:\Users\ferna\Documents\Projetos\clarifion\app\components\Footer\page.tsx
+// File: D:\PerfilSouto\Documents\ProjetosWeb\clarifion\app\components\Footer\page.tsx
 import * as entry from '../../../../../app/components/Footer/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

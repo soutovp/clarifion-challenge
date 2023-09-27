@@ -8,9 +8,11 @@ export const metadata = {
 }
 export default function Page() {
 	return <>
-		<HeaderSection />
-		<Steps />
-		<MainSection />
-		<Footer />
+		<main>
+			<HeaderSection />
+			<Steps />
+			<MainSection />
+			<Footer />
+		</main>
 	</>
 }

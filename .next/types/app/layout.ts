@@ -1,4 +1,4 @@
-// File: C:\Users\ferna\Documents\Projetos\clarifion\app\layout.tsx
+// File: D:\PerfilSouto\Documents\ProjetosWeb\clarifion\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

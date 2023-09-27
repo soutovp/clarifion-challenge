@@ -30,10 +30,10 @@ export default function Steps() {
 								<span>
 									{step.img ? <img src={`/svg/${step.img}`} alt="" /> : stepsList.indexOf(step) + 1}
 								</span>
-								<p>
-									<div>Step {stepsList.indexOf(step) + 1} : </div>
+								<div>
+									<p>Step {stepsList.indexOf(step) + 1} : </p>
 									{step.string}
-								</p>
+								</div>
 							</li>
 						)
 					})}

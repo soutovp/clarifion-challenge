@@ -5,7 +5,7 @@ export function Header() {
 	const refCount = useRef(1)
 	const elRef = useRef(null)
 	const [count, setCount] = useState(refCount.current)
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+	const [windowWidth, setWindowWidth] = useState(0)
 	let validated = false
 	// Configuration --------------
 	const slideTimerInSeconds = 5
@@ -39,6 +39,7 @@ export function Header() {
 	}
 	useEffect(() => {
 		setCount(count => count = refCount.current)
+		setWindowWidth(windowWidth => window.innerWidth)
 		window.addEventListener('resize', () => {
 			setWindowWidth(window.innerWidth)
 		})

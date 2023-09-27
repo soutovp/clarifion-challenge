@@ -1,4 +1,4 @@
-// File: C:\Users\ferna\Documents\Projetos\clarifion\app\components\HeaderSection\page.tsx
+// File: D:\PerfilSouto\Documents\ProjetosWeb\clarifion\app\components\HeaderSection\page.tsx
 import * as entry from '../../../../../app/components/HeaderSection/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
