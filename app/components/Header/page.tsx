@@ -1,22 +1,17 @@
 "use client"
 import { useEffect, useRef, useState } from 'react'
 import headerStyle from './header.module.sass'
+import useWindowDimensions from '../useWindowDimensions'
 export default function Header() {
 	const refCount = useRef(1)
 	const elRef = useRef(null)
 	const [count, setCount] = useState(refCount.current)
-	// const [windowWidth, setWindowWidth] = useState(768)
-	const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
-		width: undefined,
-	});
+	const { width, height } = useWindowDimensions()
 	const slideTimerInSeconds = 5
 	const info = {
 		satisfactionDays: 30,
 		freeDelivery: 40,
 		happyCustomers: 50000,
-	}
-	type WindowDimentions = {
-		width: number | undefined
 	}
 	const changeSlide = (direction: 'foward' | 'backward' = 'foward', value: number): void => {
 		if (direction === 'foward') {
@@ -40,13 +35,6 @@ export default function Header() {
 		}
 	}
 	useEffect(() => {
-		function handleResize(): void {
-			setWindowDimensions({
-				width: window.innerWidth
-			});
-		}
-		handleResize()
-		window.addEventListener('resize', handleResize)
 		setInterval(() => {
 			changeSlide('foward', refCount.current)
 			setCount(count => count = refCount.current)
@@ -56,10 +44,10 @@ export default function Header() {
 		<header className={headerStyle.header}>
 			<div onClick={() => changeSlide('backward', refCount.current)}><img src='/svg/left-arrow.svg' /></div>
 			<ul>
-				<li ref={elRef} style={windowDimensions.width <= 768 ? { display: (count === 1 ? 'flex' : 'none') } : {}}><img src="/svg/check-icon.svg" alt="Check symbol" />{info.satisfactionDays}-day satisfaction guarantee</li>
-				<li ref={elRef} style={windowDimensions.width <= 768 ? { display: (count === 2 ? 'flex' : 'none') } : {}}><img src="/svg/truck-icon.svg" alt="Truck symbol" />Free delivery on orders over {info.freeDelivery.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })}</li>
-				<li ref={elRef} style={windowDimensions.width <= 768 ? { display: (count === 3 ? 'flex' : 'none') } : {}}><img src="/svg/heart-icon.svg" alt="Heart symbol" />{info.happyCustomers.toLocaleString()}+ happy customers</li>
-				<li ref={elRef} style={windowDimensions.width <= 768 ? { display: (count === 4 ? 'flex' : 'none') } : {}}><img src="/svg/arrow-sync-checkmark.svg" alt="Sync symbol" />100% money back guarantee</li>
+				<li ref={elRef} style={width <= 768 ? { display: (count === 1 ? 'flex' : 'none') } : {}}><img src="/svg/check-icon.svg" alt="Check symbol" />{info.satisfactionDays}-day satisfaction guarantee</li>
+				<li ref={elRef} style={width <= 768 ? { display: (count === 2 ? 'flex' : 'none') } : {}}><img src="/svg/truck-icon.svg" alt="Truck symbol" />Free delivery on orders over {info.freeDelivery.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })}</li>
+				<li ref={elRef} style={width <= 768 ? { display: (count === 3 ? 'flex' : 'none') } : {}}><img src="/svg/heart-icon.svg" alt="Heart symbol" />{info.happyCustomers.toLocaleString()}+ happy customers</li>
+				<li ref={elRef} style={width <= 768 ? { display: (count === 4 ? 'flex' : 'none') } : {}}><img src="/svg/arrow-sync-checkmark.svg" alt="Sync symbol" />100% money back guarantee</li>
 			</ul>
 			<div onClick={() => changeSlide('foward', refCount.current)}><img src='/svg/right-arrow.svg' /></div>
 		</header>
