@@ -1,0 +1,23 @@
+@import fonts
+//Colors
+$blue-normal: #2C7EF8
+$gray-normal: #252F3D
+$font-gray-normal: #4D5254
+$font-gray-light: #969696
+$font-red-normal: #F82C2C
+//Medias
+$breakpoint-small: 768px
+$breakpoint-medium: 992px
+$breakpoint-large: 1920px
+@mixin media-small
+	@media (max-width: $breakpoint-small)
+		@content
+@mixin media-medium
+	@media (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-medium)
+		@content
+@mixin media-large
+	@media (min-width: $breakpoint-medium + 1) and (max-width: $breakpoint-large)
+		@content
+@mixin media-xlarge
+	@media (min-width: $breakpoint-large + 1)
+		@content

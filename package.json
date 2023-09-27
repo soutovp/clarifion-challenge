@@ -1,0 +1,24 @@
+{
+	"name": "clarifion",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"next": "^13.5.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-responsive-carousel": "^3.2.23"
+	},
+	"devDependencies": {
+		"@types/node": "20.7.0",
+		"@types/react": "^18.2.22",
+		"sass": "^1.68.0",
+		"typescript": "^5.2.2"
+	}
+}

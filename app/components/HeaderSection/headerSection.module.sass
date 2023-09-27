@@ -1,0 +1,36 @@
+@import '../../styles/layout'
+.section
+	text-align: center
+	padding: 30px 127px
+	@include media-small
+		padding: 30px 22px
+	ul
+		list-style: none
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+	li
+		@include media-small
+			padding-bottom: 50px
+		&:first-child
+			img
+				width: 192px
+				@include media-small
+					width: 100px
+		&:last-child
+			display: flex
+			gap: 32px
+			img
+				width: 88px
+				@include media-small
+					width: 44px
+	p
+		font-size: 2.4rem
+		font-weight: 400
+		@include media-small
+			font-size: 1.6rem
+	h1
+		font-size: 4.8rem
+		font-weight: 400
+		@include media-small
+			font-size: 3.2rem

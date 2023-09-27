@@ -1,0 +1,53 @@
+@import '../../styles/layout'
+$blue: #2C7EF8
+@mixin circle()
+	display: flex
+	flex-direction: row
+	align-items: center
+	justify-items: center
+	gap: 2rem
+	@include media-small
+		flex-direction: column
+		gap: .8rem
+		img
+			width: .8rem
+	span
+		display: flex
+		flex-direction: row
+		text-align: center
+		width: 40px
+		height: 40px
+		align-items: center
+		justify-content: center
+		border-radius: 100%
+		@include media-small
+			width: 20px
+			height: 20px
+.ul
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+	font-size: 2rem
+	@include media-small
+		font-size: 1.2rem
+	li div
+		display: inline
+		@include media-small
+			display: none
+.checked
+	@include circle()
+	span
+		background-color: green
+.active
+	font-weight: 700
+	@include circle()
+	span
+		font-weight: normal
+		background-color: $blue
+		color: white
+.next
+	@include circle()
+	span
+		background-color: white
+		color: $blue
+		border: 2px solid $blue
