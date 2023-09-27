@@ -1,4 +1,3 @@
-import Footer from "./components/Footer/page"
 import HeaderSection from "./components/HeaderSection/page"
 import MainSection from "./components/MainSection/page"
 import Steps from "./components/Steps/page"
@@ -12,7 +11,6 @@ export default function Page() {
 			<HeaderSection />
 			<Steps />
 			<MainSection />
-			<Footer />
 		</main>
 	</>
 }

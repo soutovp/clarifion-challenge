@@ -1,20 +1,17 @@
-'use client'
+"use client"
 import { useEffect, useRef, useState } from 'react'
-import _Header from './header.module.sass'
-export function Header() {
+import headerStyle from './header.module.sass'
+export default function Header() {
 	const refCount = useRef(1)
 	const elRef = useRef(null)
 	const [count, setCount] = useState(refCount.current)
-	const [windowWidth, setWindowWidth] = useState(0)
-	let validated = false
-	// Configuration --------------
+	const [windowWidth, setWindowWidth] = useState(768)
 	const slideTimerInSeconds = 5
 	const info = {
-		satisfactionDays: 30, // Satisfaction Days
-		freeDelivery: 40,	// Free $ from Delivery
-		happyCustomers: 50000, // Amount of Happy Customers
+		satisfactionDays: 30,
+		freeDelivery: 40,
+		happyCustomers: 50000,
 	}
-	//-----------------------------
 
 	const changeSlide = (direction: 'foward' | 'backward' = 'foward', value: number): void => {
 		if (direction === 'foward') {
@@ -39,21 +36,16 @@ export function Header() {
 	}
 	useEffect(() => {
 		setCount(count => count = refCount.current)
-		setWindowWidth(windowWidth => window.innerWidth)
+		setWindowWidth(window.innerWidth)
 		window.addEventListener('resize', () => {
 			setWindowWidth(window.innerWidth)
 		})
 		setInterval(() => {
-			if (validated) {
-				changeSlide('foward', refCount.current)
-			} else {
-				null
-			}
-			validated = !validated
+			changeSlide('foward', refCount.current)
 		}, 1000 * slideTimerInSeconds)
 	}, [])
 	return (
-		<header className={_Header.header}>
+		<header className={headerStyle.header}>
 			<div onClick={() => changeSlide('backward', refCount.current)}><img src='/svg/left-arrow.svg' /></div>
 			<ul>
 				<li ref={elRef} style={windowWidth <= 768 ? { display: (count === 1 ? 'flex' : 'none') } : {}}><img src="/svg/check-icon.svg" alt="Check symbol" />{info.satisfactionDays}-day satisfaction guarantee</li>

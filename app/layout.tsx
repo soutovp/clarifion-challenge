@@ -1,4 +1,5 @@
-import { Header } from './components/Header/page'
+import Footer from './components/Footer/page'
+import Header from './components/Header/page'
 import './styles/style.sass'
 export default function RootLayout({
 	children,
@@ -6,10 +7,11 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en">
+		<html lang="pt-br">
 			<body>
 				<Header />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)
