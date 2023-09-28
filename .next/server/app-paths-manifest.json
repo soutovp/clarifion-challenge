@@ -1,9 +1,3 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/page": "app/page.js",
-  "/components/Footer/page": "app/components/Footer/page.js",
-  "/components/HeaderSection/page": "app/components/HeaderSection/page.js",
-  "/components/Header/page": "app/components/Header/page.js",
-  "/components/Steps/page": "app/components/Steps/page.js",
-  "/components/MainSection/page": "app/components/MainSection/page.js"
+  "/page": "app/page.js"
 }
